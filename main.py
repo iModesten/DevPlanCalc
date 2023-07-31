@@ -39,7 +39,8 @@ def clicked():
 
 
 def is_valid_field_one(new_value):
-    result = re.match("^[+-]{,1}\d+[,.]?\d+$", new_value) is not None
+    result = re.match("^[+-]?\d+[,.]?\d+$|^[+-]?\d[,.]?$",
+                      new_value) is not None
     if not result:
         first_error_message.set("Введено неверное значение")
     else:
@@ -48,7 +49,8 @@ def is_valid_field_one(new_value):
 
 
 def is_valid_field_two(new_value):
-    result = re.match("^[+-]{,1}\d+[,.]?\d+$", new_value) is not None
+    result = re.match("^[+-]?\d+[,.]?\d+$|^[+-]?\d[,.]?$",
+                      new_value) is not None
     if not result:
         second_error_message.set("Введено неверное значение")
     else:
